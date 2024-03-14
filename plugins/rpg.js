@@ -246,7 +246,7 @@ return !0
 }
 if (!Number(args[0])) return m.reply('La cantidad debe ser un mumero.'); 
 let count = parseInt(args[0]);
-if (!user.banco) return m.reply('Hey fantasma 👻, no tener esa cantidad de dinero el banco 🥲');
+if (!user.banco) return m.reply('Hey no tener esa cantidad de dinero el banco 🥲');
 if (user.banco < count) return m.reply(`*Che no sabes cuanto dinero tiene el tu cartera? usar el comando:* #bal`);
 user.banco -= count * 1
 user.limit += count * 1
