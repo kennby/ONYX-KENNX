@@ -166,22 +166,7 @@ chalk.bold.white(`\n│💬${lenguaje.consola.text6}`) + chalk.whiteBright(`\n�
 )}          
 
 //--------------------[ AUTOBIO ]----------------------- 
-if (global.db.data.settings[numBot].autobio) {
-let setting = global.db.data.settings[numBot]
-if (new Date() * 1 - setting.status > 1000) {
-let uptime = await runtime(process.uptime())
-var timestamp = speed();   
-var latensi = speed() - timestamp 
-let text = [`${lenguaje.Bio.text} ${Object.keys(global.db.data.users).length} ${lenguaje.Bio.text2} ${latensi.toFixed(4)} 🚀`, `${lenguaje.Bio.text3} ${runtime(process.uptime())}\n\n${lenguaje.Bio.text4}`, `${lenguaje.Bio.text5}`, `👑 NovaBot uso: ${conn.public ? 'Publico' : 'Privado'} | ${lenguaje.Bio.text6} ${runtime(process.uptime())} | ${lenguaje.Bio.text7} ${Object.keys(global.db.data.users).length}`]
-let bio = text[Math.floor(Math.random() * text.length)]
-try {
-await conn.updateProfileStatus(bio)
-//await delay(3 * 3000) 
-//await conn.updateProfilePicture(numBot, { url: "https://telegra.ph/file/84b0bad9adbbd5ed2b95e.jpg" })
-setting.status = new Date() * 1 
-} catch {
-console.log(`[𝚄𝙿𝙳𝙰𝚃𝙴]\n𝙿𝚒𝚗𝚐: ${latensi.toFixed(4)}`) 
-}}} 
+
   
 //--------------------[ AUTOREAD ]-----------------------
 if (!conn.autoread && m.message && prefix) {
@@ -802,21 +787,7 @@ reply(lenguaje.owner.text26)
 await delay(3 * 3000)
 await conn.groupLeave(m.chat)}
 break
-case 'update':   
-if (!isCreator) return reply(info.owner)
-try {    
-let stdout = execSync('git pull' + (m.fromMe && q ? ' ' + q : ''))
-await m.reply(stdout.toString())
-} catch { 
-let updatee = execSync('git remote set-url origin https://github.com/elrebelde21/NovaBot-MD.git && git pull')
-await m.reply(updatee.toString())}  
-break
-case 'reiniciar': case 'restart': { 
-if (!isCreator) return reply(info.owner) 
-m.reply(lenguaje.owner.text28)
-await delay(3 * 3000) 
-conn.ws.close()}   
-break  
+
 /////////////////////////////////   
    
 //--------------------[ FUNCIONES ]-----------------------  
@@ -834,21 +805,21 @@ conn.sendPresenceUpdate('composing', m.chat)
 m.reply(`${pickRandom(['Buenos Dias trolos de mierda', '*Buen dias mi amor 😘*', '*Buenos Dias hermosa mañana verdad 🥰*'])}`)}  
 if (budy.includes(`Autodestruction`)) { 
 //let e = fs.readFileSync('./src/autodestruction.webp')
-let e = 'https://qu.ax/gCQo.webp'
+let e = ''
 let or = ['texto', 'sticker']; 
 let media = or[Math.floor(Math.random() * 2)]  
 if (media === 'texto')
 m.reply('*Mi jefe no me quiere 😢*')        
 if (media === 'sticker')         
 conn.sendFile(m.chat, e, 'sticker.webp', '',m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: 'ᶜ ᴬᵘᵗᵒᵈᵉˢᶜʳᵘʸᵉ', mediaType: 2, sourceUrl: nna, thumbnail: imagen1}}}, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})}
-if (budy.includes(`NovaBot`) || budy.includes(`novabot`)) {
+if (budy.includes(`ONYX`) || budy.includes(`ONYX`)) {
 m.react(`${pickRandom(['🌟', '👀', '🤑'])}`)}
 if (budy.includes(`Avisos`) || budy.includes(`Atencion`)) {
 m.react(`${pickRandom(['📢', '👀', '⚠️'])}`)}
 if (budy.includes(`Bot`) || budy.includes(`simi`)) {   
 game(m, budy, command, text, pickRandom, pushname, conn, participants, sender, who, body, sendImageAsUrl)}
 if (m.mentionedJid.includes(conn.user.jid)) {
-let noetiqueta = 'https://qu.ax/lqFC.webp'
+let noetiqueta = ''
 let or = ['texto', 'sticker']; 
 let media = or[Math.floor(Math.random() * 2)]
 if (media === 'sticker')     
@@ -864,192 +835,192 @@ let vn = './media/a.mp3'
 await conn.sendPresenceUpdate('recording', m.chat)
 conn.sendMessage(m.chat, { audio: { url: vn }, contextInfo: { "externalAdReply": { "title": botname, "body": ``, "previewType": "PHOTO", "thumbnailUrl": null,"thumbnail": imagen1, "sourceUrl": md, "showAdAttribution": true}}, seconds: '4556', ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, {quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})}
 if (budy.startsWith(`hola`) || budy.startsWith(`hello`)) {
-let vn = 'https://qu.ax/eGdW.mp3'
-let stic = 'https://qu.ax/LTVf.webp' 
-let stic2 = 'https://qu.ax/QftU.webp'      
+let vn = 'https:///eGdW.mp3'
+let stic = '' 
+let stic2 = ''      
 let or = ['sticker', 'audio'];  
 let media = or[Math.floor(Math.random() * 2)]
 if (media === 'sticker') conn.sendFile(m.chat, pickRandom([stic, stic2]), 'sticker.webp', '',m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: `Hola ${pushname}`, mediaType: 2, sourceUrl: nna, thumbnail: imagen1}}}, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})   
 if (media === 'audio') conn.sendAudio(m.chat, vn, m)}
 if (/^Fino señores|fino señores|Fino senores|fino senores|Fino🧐|🧐🍷|🧐🍷$/i.test(budy)) {
-let s = 'https://qu.ax/DbMX.webp'
-let s2 = 'https://qu.ax/zXa.webp'
-let vn = 'https://qu.ax/hapR.mp3'
+let s = ''
+let s2 = ''
+let vn = 'https:///hapR.mp3'
 let or = ['sticker', 'audio'];  
 let media = or[Math.floor(Math.random() * 2)]
 if (media === 'sticker') conn.sendFile(m.chat, pickRandom([s, s2]), 'sticker.webp', '',m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: wm, mediaType: 2, sourceUrl: nna, thumbnail: imagen1}}}, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})   
 if (media === 'audio') conn.sendAudio(m.chat, vn, m)}
 if (/^anadieleimporta|a nadie le importa|y que|no importa|literal$/i.test(budy)) {
-let s = 'https://qu.ax/SHgM.webp'
-let s2 = 'https://qu.ax/glpp.webp'
-let vn = 'https://qu.ax/JocM.mp3'
+let s = ''
+let s2 = ''
+let vn = 'https:///JocM.mp3'
 let or = ['sticker', 'audio'];  
 let media = or[Math.floor(Math.random() * 2)]
 if (media === 'sticker') conn.sendFile(m.chat, pickRandom([s, s2]), 'sticker.webp', '',m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: wm, mediaType: 2, sourceUrl: nna, thumbnail: imagen1}}}, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})   
 if (media === 'audio') conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Feliz cumpleaños`)) {
-const vn = 'https://qu.ax/UtmZ.mp3'
+const vn = 'https:///UtmZ.mp3'
 conn.sendAudio(m.chat, vn, m)
 m.react(`${pickRandom(['🥳', '💫', '🎊'])}`)} 
 if (budy.startsWith(`Feliz navidad`) || budy.startsWith(`Merry Christmas`) || budy.startsWith(`feliz navidad`)) {
-const vn = 'https://qu.ax/XYyY.m4a'
+const vn = 'https:///XYyY.m4a'
 conn.sendAudio(m.chat, vn, m)} 
 if (budy.startsWith(`Vete a la verga`)) {
-const vn = 'https://qu.ax/pXts.mp3';
+const vn = 'https:///pXts.mp3';
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Uwu`)) {
-const vn = 'https://qu.ax/lOCR.mp3';
+const vn = 'https:///lOCR.mp3';
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Siuuu`)) {
-const vn = 'https://qu.ax/bfC.mp3';
+const vn = 'https:///bfC.mp3';
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Pasa pack`)) {
-const vn = 'https://qu.ax/KjHR.mp3';
+const vn = 'https:///KjHR.mp3';
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Audio hentai`)) {
-const vn = 'https://qu.ax/GSUY.mp3'
+const vn = 'https:///GSUY.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Pasen porno`)) {
-const vn = 'https://qu.ax/JDZB.mp3'
+const vn = 'https:///JDZB.mp3'
 conn.sendAudio(m.chat, vn, m)}			
 if (budy.startsWith(`VAMOOO`)) {
-const vn = 'https://qu.ax/XGAp.mp3'
+const vn = 'https:///XGAp.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Hora del sexito`)) {
-const vn = 'https://qu.ax/Jpjm.mp3'
+const vn = 'https:///Jpjm.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Cuentate un chiste`)) {
-const vn = 'https://qu.ax/MSiQ.mp3'
+const vn = 'https:///MSiQ.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Admin party`)) {
-const vn = 'https://qu.ax/MpnG.mp3' 
+const vn = 'https:///MpnG.mp3' 
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Fiesta del admin`)) {
-const vn = 'https://qu.ax/jDVi.mp3'
+const vn = 'https:///jDVi.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Viernes`)) {
-const vn = 'https://qu.ax/wqXs.mp3'
+const vn = 'https:///wqXs.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`:v`)) {
-const vn = 'https://qu.ax/cxDg.mp3'
-const stic = 'https://qu.ax/ahLV.webp'
+const vn = 'https:///cxDg.mp3'
+const stic = ''
 let or = ['sticker', 'audio'];   
 let media = or[Math.floor(Math.random() * 2)] 
 if (media === 'sticker') conn.sendFile(m.chat, stic, 'sticker.webp', '',m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: `${pushname}`, mediaType: 2, sourceUrl: md, thumbnail: imagen1}}}, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})   
 if (media === 'audio') conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`La toca 7w7`)) {
-const vn = 'https://qu.ax/Payh.mp3'
+const vn = 'https:///Payh.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Quien es tu sempai botsito`)) {
-const vn = 'https://qu.ax/likr.mp3'
+const vn = 'https:///likr.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Me gimes 7u7`)) {
-const vn = 'https://qu.ax/kebK.mp3'
+const vn = 'https:///kebK.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Te amo botsito uwu`)) {
-const vn = 'https://qu.ax/tEpE.mp3'
+const vn = 'https:///tEpE.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Onichan`)) {
-const vn = 'https://qu.ax/oZj.mp3'
+const vn = 'https:///oZj.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Pasen sexo`)) {
-const vn = 'https://qu.ax/xJMQ.mp3'
+const vn = 'https:///xJMQ.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Paraguayo`)) {
-const vn = 'https://qu.ax/wTxz.mp3'
+const vn = 'https:///wTxz.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Venezolano`)) {
-const vn = 'https://qu.ax/hXh.mp3'
+const vn = 'https:///hXh.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Gaspi corte`)) {
-const vn = 'https://qu.ax/vYSf.mp3'
+const vn = 'https:///vYSf.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Gaspi buenos dias`)) {
-const vn = 'https://qu.ax/kEsc.mp3'
+const vn = 'https:///kEsc.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Enano`)) {
-const vn = 'https://qu.ax/XRgo.mp3'
+const vn = 'https:///XRgo.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Buenas noches`)) {
-const vn = 'https://qu.ax/GSuP.mp3'
+const vn = 'https:///GSuP.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Peruano`)) {
-const vn = 'https://qu.ax/avLe.mp3'
+const vn = 'https:///avLe.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Alto temazo`)) {
-const vn = 'https://qu.ax/SWYV.mp3'
+const vn = 'https:///SWYV.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`GOOOOD`)) {
-const vn = 'https://qu.ax/wlJD.mp3'
+const vn = 'https:///wlJD.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Ya me voy a dormir`)) {
-const vn = 'https://qu.ax/jeKb.mp3'
+const vn = 'https:///jeKb.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Calefon`)) {
-const vn = 'https://qu.ax/UeXx.mp3'
+const vn = 'https:///UeXx.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Bot de mierda`)) {
-const vn = 'https://qu.ax/oZfD.mp3'
+const vn = 'https:///oZfD.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Apurate bot`)) {
-const vn = 'https://qu.ax/slhL.mp3'
+const vn = 'https:///slhL.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Un chino`)) {
-const vn = 'https://qu.ax/zfBR.mp3'
+const vn = 'https:///zfBR.mp3'
 conn.sendAudio(m.chat, vn, m)}				
 if (budy.startsWith(`No funciona`)) {
-const vn = 'https://qu.ax/BEnA.mp3'
+const vn = 'https:///BEnA.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Boliviano`)) {
-const vn = 'https://qu.ax/KsCp.mp3'
+const vn = 'https:///KsCp.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Corte`)) {
-const vn = 'https://qu.ax/glrC.mp3'
+const vn = 'https:///glrC.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Gaspi me saludas`)) {
-const vn = 'https://qu.ax/xZRW.mp3'
+const vn = 'https:///xZRW.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Gaspi y las minitas`)) {
-const vn = 'https://qu.ax/wYil.mp3'
+const vn = 'https:///wYil.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Gaspi todo bien`)) {
-const vn = 'https://qu.ax/MSpr.mp3'
+const vn = 'https:///MSpr.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Me quiero suicidar`)) {
-const vn = 'https://qu.ax/ksFd.mp3'
+const vn = 'https:///ksFd.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Gaspi ya no aguanto`)) {
-const vn = 'https://qu.ax/gNwU.mp3'
+const vn = 'https:///gNwU.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Contate algo bot`)) {
-const vn = 'https://qu.ax/cFnb.mp3'
+const vn = 'https:///cFnb.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Sexo`)) { 
-const vn = 'https://qu.ax/VZYF.mp3'
+const vn = 'https:///VZYF.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Pongan cuties`)) { 
-const vn = 'https://qu.ax/cDFj.mp3'
+const vn = 'https:///cDFj.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Momento epico`)) {
-const vn = 'https://qu.ax/pDNC.mp3'
+const vn = 'https:///pDNC.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`El bot del orto no funciona`)) {
-const vn = 'https://qu.ax/STib.mp3'
+const vn = 'https:///STib.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Epicardo`)) {
-const vn = 'https://qu.ax/FTaB.mp3'
+const vn = 'https:///FTaB.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Insta de la minita`)) {
-const vn = 'https://qu.ax/JYh.mp3'
+const vn = 'https:///JYh.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Una mierda de bot`)) {
-const vn = 'https://qu.ax/keKg.mp3'
+const vn = 'https:///keKg.mp3'
 conn.sendAudio(m.chat, vn, m)}
 if (budy.startsWith(`Ultimo momento`)) {
-const vn = 'https://qu.ax/tleA.mp3'
+const vn = 'https:///tleA.mp3'
 conn.sendAudio(m.chat, vn, m)}			
 if (budy.startsWith(`Nefasto`)) {
-const vn = 'https://qu.ax/MaJu.mp3'
+const vn = 'https:///MaJu.mp3'
 conn.sendAudio(m.chat, vn, m)}
                   
 //--------------------[ OWNER ]-----------------------     
@@ -1086,7 +1057,7 @@ conn.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
  
 //--------------------[ REPORTE/ERRORS ]-----------------------     
 let e = String(err) 
-conn.sendMessage("5492266466080@s.whatsapp.net", { text: "Hola Creador/desarrollador, parece haber un error, por favor arreglarlo 🥲\n\n" + util.format(e), 
+conn.sendMessage("", { text: "Hola Creador/desarrollador, parece haber un error, por favor arreglarlo 🥲\n\n" + util.format(e), 
 contextInfo:{forwardingScore: 9999999, isForwarded: false }})
 process.on('uncaughtException', function (err) {
 console.log('Caught exception: ', err)})}}}}
@@ -1100,5 +1071,3 @@ console.log(chalk.redBright(`Update ${__filename}`))
 delete require.cache[file]
 require(file)
 })
-
-
