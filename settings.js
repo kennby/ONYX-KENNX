@@ -4,14 +4,14 @@ const chalk = require('chalk')
 const { en, es, ar, id, pt, rs} = require('./libs/idiomas/total-idiomas.js') 
 
 //---------[ PROPIETARIO/OWNER ]---------
-global.owner = [["573026191480", "Owner", true], ["593968585383"], ["5492266466080"], ["595986172767"], ["5492266613038"], ["5217294888993"],["5214437863111"], ["51906662557"], ["595992302861"], ["5217441298510"], ["5491155983299"], ["5493795319022"], ["5217821153974"], ["573013482814"]]
+global.owner = [["527862279795", "Owner", true], ["527862279795"], ["527862279795"], ["527862279795"], ["527862279795"], ["527862279795"],["527862279795"], ["527862279795"], ["527862279795"], ["527862279795"], ["527862279795"], ["527862279795"], ["527862279795"], ["527862279795"]]
 global.mods = []
 global.premium = []  
 global.blockList = []  
 
 //---------[ NOMBRE/INFO ]---------
-global.botname = "𝐍𝐨𝐯𝐚𝐁𝐨𝐭-𝐌𝐃"
-global.wm = 'Ｎ Ｏ Ｖ Ａ Ｂ Ｏ Ｔ- Ｍ Ｄ 💫'
+global.botname = "ONYX"
+global.wm = 'ONYX'
 global.vs = '1.1.0'
 
 //Función beta : escribe el número que quiere que sea bot para que mande el Código de 8 digitos
@@ -19,7 +19,7 @@ global.botNumberCode = "" //Ejemplo: +59309090909
 global.phoneNumber = ""
 
 //---------[ FECHA/IDIOMAS ]---------
-global.place = 'America/Bogota' // Aquí puedes encontrar tu ubicación https://momentjs.com/timezone/
+global.place = 'America/Lima' // Aquí puedes encontrar tu ubicación https://momentjs.com/timezone/
 global.lenguaje = es //Predeterminado en idioma Español 
 global.prefix = [`/`]
 
@@ -71,8 +71,8 @@ global.APIKeys = {
 };
  
 //---------[ STICKERS ]---------
-global.packname = "𝐍𝐨𝐯𝐚𝐁𝐨𝐭-𝐌𝐃"
-global.author = `${vs}`
+global.packname = "ONYX"
+global.author = `KENN`
  
 //---------[ IMAGEN ]---------
 global.imagen1 = fs.readFileSync('./media/menu.jpg')
@@ -81,30 +81,30 @@ global.imagen3 = fs.readFileSync('./media/menu3.jpg')
 global.noperfil = fs.readFileSync('./media/sinfoto.jpg')
 
 //---------[ ENLACES ]---------
-global.md = 'https://github.com/elrebelde21/NovaBot-MD'
-global.yt = 'https://www.youtube.com/@elrebelde.21'
-global.tiktok = 'tiktok.com/@elrebelde21'
-global.fb = 'https://www.facebook.com/elrebelde21'
-global.faceb = 'https://facebook.com/groups/872989990425789/'
+global.md = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v'
+global.yt = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v'
+global.tiktok = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v'
+global.fb = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v'
+global.faceb = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v'
 
-global.nna = 'https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A' //Update 
-global.nn = 'https://chat.whatsapp.com/C6sxsP2ckrr2vxMKclOeCD' //LoliBot
-global.nn2 = 'https://chat.whatsapp.com/H4hxytyGvucIF1k0UAR7es' //Loli & Nova
-global.nn3 = 'https://chat.whatsapp.com/Ej5AUrpmYnJKYtEa6YMwK6' //Grupo de Colaboracion
-global.nn4 = 'https://chat.whatsapp.com/E9qJfvlLjENKAxnhII9rao' // Grupo COL 2
-global.nn5 = 'https://chat.whatsapp.com/B6vVEmV3zffHNyabOMtzSb' //Grupo COL 3
-global.nn6 = 'https://chat.whatsapp.com/Em4Byf4w5VgHObPvZQlfnM' //test
-global.nn7 = 'https://chat.whatsapp.com/FDRfhecUGrCEQswkg8FUYz' //Grupo ayuda sobre el bot
-global.nn8 = 'https://chat.whatsapp.com/KlqNmoUcVnsGJxIfATIDrK' //enlace lolibot
-global.multi = 'https://chat.whatsapp.com/IB9Vs7mZ03BBkH3reCU8Dw' //Grupo COL 4
+global.nna = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v' //Update 
+global.nn = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v' //LoliBot
+global.nn2 = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v' //Loli & Nova
+global.nn3 = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v' //Grupo de Colaboracion
+global.nn4 = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v' // Grupo COL 2
+global.nn5 = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v' //Grupo COL 3
+global.nn6 = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v' //test
+global.nn7 = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v' //Grupo ayuda sobre el bot
+global.nn8 = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v' //enlace lolibot
+global.multi = 'https://whatsapp.com/channel/0029VaDajsjLI8YRnDjT2y1v' //Grupo COL 4
 global.nna2 = 'Em4Byf4w5VgHObPvZQlfnM'
 
 //---------[ INFO ]--------- 
-global.info = { wait: '*⌛ _Cargando..._ ▬▭▭▭▭▭▭*', 
-waitt: '*⌛ _Cargando..._ ▬▬▭▭▭*', 
-waittt: '*⌛ _Cargando..._ ▬▬▬▬▭▭*', 
-waitttt: '*⌛ _Cargando..._ ▬▬▬▬▬▬▭*', 
-waittttt: '*⌛ _Cargando..._ ▬▬▬▬▬▬▬*', 
+global.info = { wait: '▬▭▭▭▭▭▭*', 
+waitt: '▬▬▭▭▭*', 
+waittt: '*▬▬▬▬▭▭*', 
+waitttt: '*▬▬▬▬▬▬▭*', 
+waittttt: '*▬▬▬▬▬▬▬*', 
 result: `${lenguaje['exito']()}`,  
 admin: `${lenguaje['admin']()}`, 
 botAdmin: `${lenguaje['botAdmin']()}`, 
