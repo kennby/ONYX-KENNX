@@ -131,7 +131,7 @@ fs.unlinkSync(mediz)
 m.reply(`exito`)}}
 
 if (command == 'botname' || command == 'nuevonombre' || command == 'namebot') {
-if (!text) return m.reply(`Ej: ${prefix + command} NovaBot`)
+if (!text) return m.reply(`Ej: ${prefix + command} ONYXBot`)
 await conn.updateProfileName(text)
 m.reply(`Exito`)}
 
