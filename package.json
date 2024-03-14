@@ -1,5 +1,5 @@
 {
-  "name": "NovaBot-MD",
+  "name": "ONYX",
   "version": "1.1.0",
   "description": "Bot de whatsapp",
   "main": "index.js",
@@ -75,4 +75,4 @@
    "ytdl-core": "^4.11.4",
    "youtubedl-core": "^4.11.4"
   }
-  }
+}
