@@ -209,7 +209,7 @@ printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
 logger: pino({ level: 'silent' }),
 auth: { creds: state.creds, keys: makeCacheableSignalKeyStore(state.keys, pino({level: 'silent'})) },
 mobile: MethodMobile, 
-browser: opcion == '1' ? ['NovaBot-MD', 'Safari', '1.0.0'] : methodCodeQR ? ['NovaBot-MD', 'Safari', '1.0.0'] : ['Ubuntu', 'Chrome', '2.0.0'],
+browser: opcion == '1' ? ['ONYX', 'Safari', '1.0.0'] : methodCodeQR ? ['ONYX-MD', 'Safari', '1.0.0'] : ['Ubuntu', 'Chrome', '2.0.0'],
 msgRetry,
 msgRetryCache,
 version,
@@ -298,21 +298,6 @@ var prefCmd = prefix+toCmd
 sock.appenTextMessage(prefCmd, chatUpdate)
 }}}})*/
 
-//anticall
-sock.ev.on('call', async (fuckedcall) => { 
-sock.user.jid = sock.user.id.split(":")[0] + "@s.whatsapp.net" // jid in user?
-let anticall = global.db.data.settings[numBot].anticall
-if (!anticall) return
-console.log(fuckedcall)
-for (let fucker of fuckedcall) {
-if (fucker.isGroup == false) {
-if (fucker.status == "offer") {
-let call = await sock.sendTextWithMentions(fucker.from, `*[ ! ] @${fucker.from.split('@')[0]} ${lenguaje['smscall']()} ${fucker.isVideo ? `videollamadas` : `llamadas` }_\n\n${lenguaje['smscall2']()}\n\n• ${fb}`)
-let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;Propietario 👑;;;\nFN:Propietario\nORG:Propietario 👑\nTITLE:\nitem1.TEL;waid=5492266466080:+54 9 2266 46-6080\nitem1.X-ABLabel:Propietario 👑\nX-WA-BIZ-DESCRIPTION:ᴇsᴄʀɪʙɪ sᴏʟᴏ ᴘᴏʀ ᴄᴏsᴀs ᴅᴇʟ ʙᴏᴛ.\nX-WA-BIZ-NAME:Owner 👑\nEND:VCARD`
-sock.sendMessage(fucker.from, { contacts: { displayName: 'ɴᴏᴠᴀʙᴏᴛ-ᴍᴅ 👑', contacts: [{ vcard }] }}, {quoted: call, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
-await sleep(8000)
-await sock.updateBlockStatus(fucker.from, "block")
-}}}})
 
 //detect
 sock.ev.on("groups.update", async (json) => {
@@ -494,7 +479,7 @@ const time = moment.tz('America/Bogota').format('HH:mm:ss')
 const date = moment.tz('America/Bogota').format('DD/MM/YYYY')
 let name = num
 const miembros = metadata.participants.length
-let vn = 'https://qu.ax/cUYg.mp3'
+let vn = ''
 let wel = [`${lenguaje['smsWel']()} @${name.split("@")[0]} ${lenguaje['smsWel2']()}`, `${lenguaje['smsWel']()} @${name.split("@")[0]} ${lenguaje['smsWel3']()} ${metadata.subject} 』\n\n${lenguaje['smsWel4']()}`, `${lenguaje['smsWel5']()} ${lenguaje['smsWel6']()} @${name.split("@")[0]} 🥳`]
 let or = ['texto', 'audio', 'texto2'];
 let media = or[Math.floor(Math.random() * 3)]
@@ -531,7 +516,7 @@ let name = num
 const members = metadata.participants.length
 let by = [`${lenguaje['smsBye']()} @${name.split("@")[0]} 👋`, `${lenguaje['smsBye2']()} @${name.split("@")[0]} 👋\n\n${lenguaje['smsBye3']()}`, `_@${name.split("@")[0]} ${lenguaje['smsBye4']()}`]
 //let byegc = fs.readFileSync('./src/byegc.webp')
-let byegc = 'https://qu.ax/WUEu.webp'
+let byegc = ''
 let or = ['texto', 'texto2', 'stickers'];
 let media = or[Math.floor(Math.random() * 3)]
 let bye = by[Math.floor(Math.random() * by.length)]
@@ -601,11 +586,11 @@ const { connection, lastDisconnect, qr, receivedPendingNotifications } = update;
 console.log(receivedPendingNotifications)
 if (connection == 'connecting') {
 console.log(chalk.gray('iniciando...'));
-say('NovaBot-MD', {
+say('ONYX', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']});
-say(`By: elrebelde21`, {
+say(`By: KENN`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']})
